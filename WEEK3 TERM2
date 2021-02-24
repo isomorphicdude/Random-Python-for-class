@@ -1,0 +1,15 @@
+def factor_sum(a):
+    ### BEGIN SOLUTION
+    from math import floor, sqrt
+    # initalize fsum
+    fsum = 0
+    # square root of a
+    sqrta = floor(sqrt(a))
+    # for loop
+    for r in range(1,sqrta+1):
+        if a%r == 0:
+            fsum += r + a//r
+    # adjust for perfect squares
+    if sqrta ** 2 == a:
+        fsum -= sqrta
+    return fsum
