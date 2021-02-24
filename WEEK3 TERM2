@@ -1,3 +1,5 @@
+#Factor sum
+
 def factor_sum(a):
     ### BEGIN SOLUTION
     from math import floor, sqrt
@@ -13,3 +15,55 @@ def factor_sum(a):
     if sqrta ** 2 == a:
         fsum -= sqrta
     return fsum
+
+#Fibonacci
+
+def fibonacci_recpair(n):
+    ### BEGIN SOLUTION
+    # base case
+    if n==2:
+        return (1, 1)
+    # recursion step
+    else:
+        previous = fibonacci_recpair(n-1)
+        return (previous[1], previous[0]+previous[1])
+        
+
+#popmin
+def pop_min(num_list):
+    ### BEGIN SOLUTION
+    # initialize min at infinity
+    this_min = float('inf')
+    # for loop
+    for i in range(len(num_list)):
+        # adjust minimum if necessary
+        if num_list[i] < this_min:
+            min_index = i
+            this_min = num_list[i]
+    return num_list.pop(min_index)
+    
+    
+#Sort and generate list
+
+def simple_sort(num_list):
+    ### BEGIN SOLUTION
+    # length of list
+    n = len(num_list)
+    # empty new list
+    new_list = []
+    # for loop
+    for r in range(n):
+        # pop the minimum and append it to new list
+        new_list.append(pop_min(num_list))
+    num_list += new_list                           #This just attaches the new list to the original now empty list
+    return new_listo 
+    ### END SOLUTION
+my_list = [6,8,3,9,2,0,3,0,1,2,1]
+print(simple_sort(my_list))
+print(my_list)
+    
+    
+    
+    
+
+    
